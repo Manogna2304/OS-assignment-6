@@ -1,0 +1,9 @@
+This program demonstrates synchronization and deadlock avoidance using five processes and three shared resource types: Printer, Scanner, and Disk. The resources have limited instances: two printers, one scanner, and two disks.
+
+The program uses fork() to create five processes and synchronization mechanisms to protect access to the shared resource pools. Each process requests the resources it needs, performs simulated work, and releases the resources after completing its task.
+
+The deadlock prevention strategy used is resource ordering. A global order is defined as:
+
+Printer < Scanner < Disk
+
+Every process acquires its required resources according to this order. This prevents circular wait, which is one of the necessary conditions for deadlock. The program is executed for multiple cycles to demonstrate that resources are shared correctly, no resource limit is exceeded, and all five processes complete their work without deadlock.
