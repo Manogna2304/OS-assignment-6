@@ -1,0 +1,5 @@
+This program demonstrates deadlock prevention using the resource-ordering technique. Two processes, A and B, use two shared locks: Lock1 and Lock2.
+
+In the bad resource-ordering scenario, Process A acquires Lock1 and then requests Lock2, while Process B acquires Lock2 and then requests Lock1. This creates a circular wait, where each process holds one lock and waits for the other. As a result, a deadlock occurs.
+
+To prevent this, both processes are modified to acquire the locks in the same global order: Lock1 followed by Lock2. This eliminates circular wait because no process can hold a higher-order lock while waiting for a lower-order lock. The fixed version completes successfully without deadlock.
